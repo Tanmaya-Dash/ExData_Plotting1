@@ -1,6 +1,0 @@
-data <- read.csv("~/R/Exploratory/exdata-data-household_power_consumption/household_power_consumption.txt", sep=";", quote="")
-data<-subset(data,Date == "1/2/2007" | Date == "2/2/2007")
-data$DateTime<-as.POSIXct(paste(data$Date,data$Time), format="%d/%m/%Y %H:%M:%S")
-png("Plot1.png", width = 480, height = 480, bg = "transparent", units = "px")
-plot(data$DateTime,as.numeric(as.character(data$Global_active_power)),xlab="",ylab="Global Active Power (kilowatts)",type="l")
-dev.off()
